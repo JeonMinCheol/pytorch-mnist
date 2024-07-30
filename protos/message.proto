@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package message;
+
+service sendParams{
+ rpc GetServerResponse(Message) returns (MessageResponse) {}
+}
+
+message Message {
+  string device = 1;
+  bytes model = 2;
+}
+
+message MessageResponse{
+ string message = 1;
+ bool received = 2;
+}
